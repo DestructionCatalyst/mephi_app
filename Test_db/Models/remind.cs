@@ -7,7 +7,7 @@ namespace Test_db.Models
 {
     public class remind
     {
-        public int key { get; set; }
+        public int ID { get; set; }
         public string name { get; set; }
         public int institution { get; set; }
         public DateTime from { get; set; }

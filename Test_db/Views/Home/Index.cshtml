@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Test_db.Models.news>
+@{
+    //ViewData["Title"] = "Список смартфонов";
+    Layout = null;
 }
+<!DOCTYPE html>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html>
+<head>
+    <title>Новости института</title>
+</head>
+<body>
+    <h3>Новости</h3>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Место</td>
+            <td>Дата</td>
+            <td></td>
+        </tr>
+        @foreach (var news in Model)
+        {
+            <tr>
+                <td>@news.name</td>
+                <td>@news.place</td>
+                <td>@news.t.ToLongDateString(), @news.t.ToShortTimeString() </td>
+                <td><a href="~/Home/News/@news.ID">Подробнее...</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
