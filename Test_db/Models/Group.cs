@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace Test_db.Models
 {
-    public class qr
+    public class Group
     {
         public int ID { get; set; }
         public string name { get; set; }
-        public string text { get; set; }
-        public byte[] top_img { get; set; }
-        //public int IDPlace { get; set; }
+        public int IDInst { get; set; }
     }
 }

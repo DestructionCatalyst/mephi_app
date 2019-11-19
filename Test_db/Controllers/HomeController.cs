@@ -30,6 +30,14 @@ namespace Test_db.Controllers
         {
             return Json(await db.newss.Where(p => p.institution == inst).ToListAsync());
         }
+        public async Task<IActionResult> getrem()
+        {
+            return Json(await db.reminds.ToListAsync());
+        }
+        public async Task<IActionResult> getqr(string? nam)
+        {
+            return Json(await db.qrs.Where(p => p.name == nam).ToListAsync());
+        }
         /*private readonly ILogger<HomeController> _logger;
         
         public HomeController(ILogger<HomeController> logger)
