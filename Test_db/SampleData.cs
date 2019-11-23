@@ -75,20 +75,130 @@ namespace Test_db
 
                     new qr
                     {
-                        name = "G309",
+                        name = "Г-309",
                         text = "Учебный отдел Института интеллектуальных кибернетических систем. Открыт с 8:30 до 17:50."
                     },
                     new qr
                     {
-                        name = "A100",
+                        name = "А-100",
                         text = "Лекционная аудитория, оборудована микрофоном и проекторами."
                     },
                      new qr
                      {
-                         name = "W204b",
+                         name = "В-204б",
                          text = "Компьютерная лаборатория."
                      }
                 );
+                context.SaveChanges();
+            }
+            if (!context.institutions.Any())
+            {
+                //Console.WriteLine("Reminder!");
+                context.institutions.AddRange(
+
+                    new institution
+                    {
+                        ID = 1,
+                        name = "ИЯФиТ"
+                        
+                    },
+                    new institution
+                    {
+                        ID  =2,
+                        name = "ЛаПлаз"
+                        
+                    },
+                     new institution
+                     {
+                         ID= 5,
+                         name = "ИИКС"
+                         
+                     }
+                ); ;
+                context.SaveChanges();
+            }
+            if (!context.dots.Any())
+            {
+                //Console.WriteLine("Reminder!");
+                context.dots.AddRange(
+
+                    new dot
+                    {
+                        ID = 1,
+                        x = 1,
+                        y = 1
+
+                    },
+                    new dot
+                    {
+                        ID = 2,
+                        x = 2,
+                        y = 2
+
+                    },
+                     new dot
+                     {
+                         ID = 3,
+                         x = 3,
+                         y = 3
+
+                     }
+                ); ;
+                context.SaveChanges();
+            }
+            if (!context.ways.Any())
+            {
+                //Console.WriteLine("Reminder!");
+                context.ways.AddRange(
+
+                    new way
+                    {
+                        IDStart = 1,
+                        IDEnd=2,
+                        len = 1.4
+
+                    },
+                    new way
+                    {
+                        IDStart = 1,
+                        IDEnd = 3,
+                        len = 2.8
+
+                    },
+                     new way
+                     {
+                         IDStart = 2,
+                         IDEnd = 3,
+                         len = 10
+
+                     }
+                ); ;
+                context.SaveChanges();
+            }
+            if (!context.groups.Any())
+            {
+                //Console.WriteLine("Reminder!");
+                context.groups.AddRange(
+
+                    new Group
+                    {
+                        name = "Б19-101",
+                        IDInst = 1
+
+                    },
+                    new Group
+                    {
+                        name = "Б19-201",
+                        IDInst = 2
+
+                    },
+                     new Group
+                     {
+                         name = "Б19-514",
+                         IDInst = 5
+
+                     }
+                ); ;
                 context.SaveChanges();
             }
         }

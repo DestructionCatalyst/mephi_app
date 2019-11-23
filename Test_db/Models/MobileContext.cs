@@ -14,6 +14,10 @@ namespace Test_db.Models
         public DbSet<qr> qrs { get; set; }
         public DbSet<news> newss { get; set; }
         public DbSet<remind> reminds { get; set; }
+        public DbSet<dot> dots { get; set; }
+        public DbSet<Group> groups { get; set; }
+        public DbSet<way> ways { get; set; }
+        public DbSet<institution> institutions { get; set; }
 
         public MobileContext(DbContextOptions<MobileContext> options)
             : base(options)

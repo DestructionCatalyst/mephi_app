@@ -28,7 +28,8 @@ namespace Test_db.Controllers
         }
         public async Task<IActionResult> getnews(int? inst)
         {
-            return Json(await db.newss.Where(p => p.institution == inst).ToListAsync());
+            if (inst == 0) return Json(await db.newss.ToListAsync());
+            else return Json(await db.newss.Where(p => p.institution == inst).ToListAsync());
         }
         public async Task<IActionResult> getrem()
         {
@@ -37,6 +38,22 @@ namespace Test_db.Controllers
         public async Task<IActionResult> getqr(string? nam)
         {
             return Json(await db.qrs.Where(p => p.name == nam).ToListAsync());
+        }
+        public async Task<IActionResult> getdots()
+        {
+            return Json(await db.dots.ToListAsync());
+        }
+        public async Task<IActionResult> getways()
+        {
+            return Json(await db.ways.ToListAsync());
+        }
+       public async Task<IActionResult> getgroup(string? nam)
+        {
+            return Json(await db.groups.Where(p => p.name == nam).ToListAsync());
+        }
+        public async Task<IActionResult> getinst(int? id)
+        {
+            return Json(await db.institutions.Where(p => p.ID == id).ToListAsync());
         }
         /*private readonly ILogger<HomeController> _logger;
         

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Test_db.Models
 {
-    public class Way
+    public class way
     {
         public int ID { get; set; }
         public int IDStart { get; set; }

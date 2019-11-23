@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Test_db.Models
 {
-    public class Dot
+    public class dot
     {
         public int ID { get; set; }
         public int x { get; set; }
