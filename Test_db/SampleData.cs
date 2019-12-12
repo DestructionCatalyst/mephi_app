@@ -19,25 +19,39 @@ namespace Test_db
                         name = "Инструкция по применению: ИИКС",
                         place = "Aктовый зал",
                         institution = 5,
-                        t = new DateTime(2019,8,27,10,30,0)
+                        t = "27.08.2019,10:30",
+                        IDPlace = 1
                     },
                     new news
+                    {
+                        name = "Инструкция по применению: ЛаПлаз",
+                        place = "Aктовый зал",
+                        institution = 2,
+                        t = "28.08.2019,10:30",
+                        IDPlace = 1
+                    },
+                new news
                     {
                         name = "Кубок МИФИ по программированию",
                         place = "Корпус В",
                         institution = 0,
-                        t = new DateTime(2019, 9, 27, 16, 30, 0)
+                        t = "27.09.2019,16:30",
+                        IDPlace = 2
                     },
                     new news
                     {
                         name = "Ярмарка вакансий",
                         place = "Актовый зал",
                         institution = 0,
-                        t = new DateTime(2019, 11, 14, 10, 15, 0)
+                        t = "14.11.2019,10:15",
+                        IDPlace = 1
                     }
+
                 ) ; 
                 context.SaveChanges();
             }
+
+            
 
             if (!context.reminds.Any())
             {
@@ -48,22 +62,25 @@ namespace Test_db
                     { 
                         name = "Подать документы на студенческий билет и зачётную книжку",
                         place = "Учебный отдел Вашего института",
-                        from = new DateTime(2019, 9, 1, 0, 0, 0),
-                        to = new DateTime(2019, 9, 27, 0, 0, 0)
+                        from = "01.09.2019",
+                        to = "27.09.2019",
+                        IDPlace = 1
                     },
                     new remind
                     {
                         name = "Получить книги в библиотеке",
                         place = "Абонемент учебной литературы (Г-053)",
-                        from = new DateTime(2019, 8, 20, 0, 0, 0),
-                        to = new DateTime(2019, 9, 1, 0, 0, 0)
+                        from = "20.08.2019",
+                        to = "01.09.2019",
+                        IDPlace = 3
                     },
                     new remind
                     {
                         name = "Встать на воинский учёт",
                         place = "Военно-мобилизационное управление, военкомат по месту проживания",
-                        from = new DateTime(2019, 9, 1, 0, 0, 0),
-                        to = new DateTime(2019, 9, 30, 0, 0, 0)
+                        from = "01.09.2019",
+                        to = "30.09.2019",
+                        IDPlace = 3
                     }
                 );
                 context.SaveChanges();
@@ -76,42 +93,48 @@ namespace Test_db
                     new qr
                     {
                         name = "Г-309",
-                        text = "Учебный отдел Института интеллектуальных кибернетических систем. Открыт с 8:30 до 17:50."
+                        text = "Учебный отдел Института интеллектуальных кибернетических систем. Открыт с 8:30 до 17:50.",
+                        IDPlace = 1
                     },
                     new qr
                     {
                         name = "А-100",
-                        text = "Лекционная аудитория, оборудована микрофоном и проекторами."
+                        text = "Лекционная аудитория, оборудована микрофоном и проекторами.",
+                        IDPlace = 1
                     },
                      new qr
                      {
                          name = "В-204б",
-                         text = "Компьютерная лаборатория."
+                         text = "Компьютерная лаборатория.",
+                         IDPlace = 2
                      }
                 );
                 context.SaveChanges();
             }
             if (!context.institutions.Any())
             {
-                //Console.WriteLine("Reminder!");
+                Console.WriteLine("Institutions!");
                 context.institutions.AddRange(
 
                     new institution
                     {
-                        ID = 1,
-                        name = "ИЯФиТ"
+                       // ID = 1,
+                        name = "ИЯФиТ",
+                        IDDec = 1
                         
                     },
                     new institution
                     {
-                        ID  =2,
-                        name = "ЛаПлаз"
+                       // ID = 2,
+                        name = "ЛаПлаз",
+                        IDDec = 2
                         
                     },
                      new institution
                      {
-                         ID= 5,
-                         name = "ИИКС"
+                       //  ID= 5,
+                         name = "ИИКС",
+                         IDDec = 3
                          
                      }
                 ); ;
@@ -119,26 +142,26 @@ namespace Test_db
             }
             if (!context.dots.Any())
             {
-                //Console.WriteLine("Reminder!");
+                Console.WriteLine("Dots!");
                 context.dots.AddRange(
 
                     new dot
                     {
-                        ID = 1,
+                        //ID = 1,
                         x = 1,
                         y = 1
 
                     },
                     new dot
                     {
-                        ID = 2,
+                        //ID = 2,
                         x = 2,
                         y = 2
 
                     },
                      new dot
                      {
-                         ID = 3,
+                        // ID = 3,
                          x = 3,
                          y = 3
 
@@ -148,7 +171,7 @@ namespace Test_db
             }
             if (!context.ways.Any())
             {
-                //Console.WriteLine("Reminder!");
+                Console.WriteLine("Ways!");
                 context.ways.AddRange(
 
                     new way
@@ -177,7 +200,7 @@ namespace Test_db
             }
             if (!context.groups.Any())
             {
-                //Console.WriteLine("Reminder!");
+                Console.WriteLine("Groups!");
                 context.groups.AddRange(
 
                     new Group

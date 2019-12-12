@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Test_db.Models;
 
 namespace Test_db.Migrations
 {
     [DbContext(typeof(MobileContext))]
-    partial class MobileContextModelSnapshot : ModelSnapshot
+    [Migration("20191124202719_dbs_inplace")]
+    partial class dbs_inplace
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,9 +45,6 @@ namespace Test_db.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("x")
                         .HasColumnType("int");
@@ -95,8 +94,8 @@ namespace Test_db.Migrations
                     b.Property<string>("place")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("t")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("t")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("text")
                         .HasColumnType("nvarchar(max)");
@@ -115,9 +114,6 @@ namespace Test_db.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("IDPlace")
-                        .HasColumnType("int");
 
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");
@@ -140,11 +136,8 @@ namespace Test_db.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IDPlace")
-                        .HasColumnType("int");
-
-                    b.Property<string>("from")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("from")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");
@@ -155,8 +148,8 @@ namespace Test_db.Migrations
                     b.Property<string>("text")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("to")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("to")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 

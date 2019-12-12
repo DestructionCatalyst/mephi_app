@@ -29,7 +29,7 @@ namespace Test_db.Controllers
         public async Task<IActionResult> getnews(int? inst)
         {
             if (inst == 0) return Json(await db.newss.ToListAsync());
-            else return Json(await db.newss.Where(p => p.institution == inst).ToListAsync());
+            else return Json(await db.newss.Where(p => (p.institution == inst)||(p.institution == 0)).ToListAsync());
         }
         public async Task<IActionResult> getrem()
         {
@@ -47,9 +47,9 @@ namespace Test_db.Controllers
         {
             return Json(await db.ways.ToListAsync());
         }
-       public async Task<IActionResult> getgroup(string? nam)
+       public async Task<IActionResult> getgroups()
         {
-            return Json(await db.groups.Where(p => p.name == nam).ToListAsync());
+            return Json(await db.groups.ToListAsync());
         }
         public async Task<IActionResult> getinst(int? id)
         {

@@ -11,6 +11,6 @@ namespace Test_db.Models
         public string name { get; set; }
         public string text { get; set; }
         public byte[] top_img { get; set; }
-        //public int IDPlace { get; set; }
+        public int IDPlace { get; set; }
     }
 }

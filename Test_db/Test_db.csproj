@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="pic\1573618112_pervoru-0522.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.1">
